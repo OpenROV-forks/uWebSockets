@@ -10,7 +10,7 @@ endif()
 project (µWebSockets)
 
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".a;.so")
-option(BUILD_SHARED_LIBS "Build shared libraries." ON)
+option(BUILD_SHARED_LIBS "Build shared libraries." OFF)
 
 find_package(OpenSSL REQUIRED)
 find_package(ZLIB REQUIRED)
