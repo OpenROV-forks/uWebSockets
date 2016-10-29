@@ -9,6 +9,7 @@ if(CMAKE_VERSION VERSION_LESS "3.1")
 endif()
 project (µWebSockets)
 
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a;.so")
 option(BUILD_SHARED_LIBS "Build shared libraries." ON)
 
 find_package(OpenSSL REQUIRED)
@@ -31,6 +32,7 @@ target_link_libraries (uWS LINK_PUBLIC ${LIBUV_LIBRARY})
 target_link_libraries (uWS LINK_PUBLIC ${OPENSSL_SSL_LIBRARY})
 target_link_libraries (uWS LINK_PUBLIC ${OPENSSL_CRYPTO_LIBRARY})
 target_link_libraries (uWS LINK_PUBLIC ${ZLIB_LIBRARY})
+target_link_libraries (uWS LINK_PUBLIC dl)
 
 if (UNIX)
 target_link_libraries (uWS LINK_PUBLIC pthread)
